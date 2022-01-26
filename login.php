@@ -13,4 +13,6 @@ if($sorgu == "POST")
           "successfull" => "3"
       )));
   }
+  $email = $_POST["email"];
+  $password = $_POST["password"];
 ?>

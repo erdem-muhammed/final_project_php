@@ -9,4 +9,12 @@ empty($_POST["phone"]))
 {
     return;
 }
+$name = $_POST["name"];
+$surname = $_POST["surname"];
+$email = $_POST["email"];
+$pass = $_POST["password"];
+$phone_number = $_POST["phoneNumber"];
+
+
+echo "setup";
 ?>

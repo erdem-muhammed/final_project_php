@@ -32,7 +32,7 @@ if($inquiry == "POST")
       if($resultcontent["password"] == $password) // if the password is correct too
       {
       $token = bin2hex(random_bytes(20));
-      $query = "UPDATE register_info SET token = '" . $token . "'  WHERE id = " . $resultcontent["id"];
+      $query = "UPDATE users SET token = '" . $token . "'  WHERE id = " . $resultcontent["id"];
 
       $result2 = $conn->query($query);
       if($result2 === true)
@@ -57,7 +57,7 @@ if($inquiry == "POST")
 else
 {
     exit(json_encode(array(
-        "successfull" => "0"
+        "successfull" => "5"
     )));
 }
 

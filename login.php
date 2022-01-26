@@ -16,6 +16,7 @@ if($inquiry == "POST")
   $email = $_POST["email"];
   $password = $_POST["password"];
 
-  
+  $query = "SELECT * FROM users WHERE email= '" . $email . "'";
+  $result = $conn->query($query);
 
 ?>

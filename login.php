@@ -2,9 +2,9 @@
 include("connection.php");
 
 
-$query = $_SERVER["REQUEST_METHOD"];
+$inquiry = $_SERVER["REQUEST_METHOD"];
 
-if($sorgu == "POST")
+if($inquiry == "POST")
 {
   // invalid post query
   if(empty($_POST["email"]) || empty($_POST["password"]))
@@ -15,4 +15,7 @@ if($sorgu == "POST")
   }
   $email = $_POST["email"];
   $password = $_POST["password"];
+
+  
+
 ?>

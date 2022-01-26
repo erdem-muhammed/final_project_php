@@ -19,4 +19,12 @@ if($inquiry == "POST")
   $query = "SELECT * FROM users WHERE email= '" . $email . "'";
   $result = $conn->query($query);
 
+  if($result->num_rows == 0)
+  {
+      exit(json_encode(array(
+          "successfull" => "2"
+      )));
+  }
+  
+
 ?>

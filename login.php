@@ -25,6 +25,34 @@ if($inquiry == "POST")
           "successfull" => "2"
       )));
   }
-  
+  else // users found
+  {
+      $resultcontent = $result->fetch_assoc();
+      
+      if($resultcontent["password"] == $password) // if the password is correct too
+      {
+      $token = bin2hex(random_bytes(20));
+      $query = "UPDATE register_info SET token = '" . $token . "'  WHERE id = " . $resultcontent["id"];
+
+      $result2 = $conn->query($query);
+      if($result2 === true)
+      {
+          setcookie("token", $token);
+          echo(json_encode(array(
+              "successfull" => "1",
+              "name"        => "admin",
+              "id"          => $resultcontent["id"],
+              "token"       => $token
+          )));
+      }
+      else
+      {
+          exit(json_encode(array(
+              "successfull" => "0"
+          )));
+      }
+    }
+  }
+
 
 ?>

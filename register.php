@@ -17,4 +17,7 @@ $phone_number = $_POST["phoneNumber"];
 
 
 echo "setup";
+
+
+$conn = new mysqli($server_name, $server_user, $server_pass, $database_name);
 ?>

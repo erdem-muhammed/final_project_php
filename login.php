@@ -53,6 +53,13 @@ if($inquiry == "POST")
       }
     }
   }
+}
+else
+{
+    exit(json_encode(array(
+        "successfull" => "0"
+    )));
+}
 
 
 ?>

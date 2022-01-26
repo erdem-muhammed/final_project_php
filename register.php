@@ -27,7 +27,9 @@ if ($conn->connect_error) {
   $sql = "INSERT INTO users (`name`, `surname`, `email`, `password`, `phone_number`) VALUES ( '$name', '$surname', '$email', '$pass', '$phone_number')";
   echo "query gönderiliyor";
   if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo(json_encode(array(
+        "successfull" => "1"
+    )));
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
